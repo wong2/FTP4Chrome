@@ -1,0 +1,16 @@
+{
+  "name": "FTP4Chrome",
+  "description": "FTP Client in Chrome",
+  "version": "0.0.2",
+  "author": {
+    "name": "wong2",
+    "email": "wonderfuly@gmail.com"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://wong2.mit-license.org/"
+    }
+  ],
+  "main": "grunt.js"
+}

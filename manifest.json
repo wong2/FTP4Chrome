@@ -1,0 +1,16 @@
+{
+    "name": "FTP4Chrome",
+    "version": "0.0.2",
+    "description": "FTP Client in Chrome",
+    "background_page": "background.html",
+    "app": {
+        "launch": {
+            "local_path": "main.html"
+        }
+    },
+    "icons": {
+    },
+    "permissions": [
+        "experimental"
+    ]
+}

@@ -1,6 +1,6 @@
-define ["js/util.js", "lib/EventEmitter.js", "js/ftp.js"], (Utils, EventEmitter, FTP) ->
+define ["lib/EventEmitter.js", "js/ftp.js"], (EventEmitter, FTP) ->
 
-    class FTPClient
+    class FTPClient extends EventEmitter
 
         constructor: (options) ->
             @options =
@@ -9,7 +9,6 @@ define ["js/util.js", "lib/EventEmitter.js", "js/ftp.js"], (Utils, EventEmitter,
 
             _.extend @options, options
 
-            EventEmitter.call this
 
         connect: (callback) =>
             @conn = new FTP
@@ -57,7 +56,3 @@ define ["js/util.js", "lib/EventEmitter.js", "js/ftp.js"], (Utils, EventEmitter,
 
                 iter.on 'success', ->
                     callback false, files
-
-    Utils.inherits FTPClient, EventEmitter
-
-    return FTPClient

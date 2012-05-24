@@ -1,9 +1,13 @@
 (function() {
-  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; };
+  var __bind = function(fn, me){ return function(){ return fn.apply(me, arguments); }; },
+    __hasProp = {}.hasOwnProperty,
+    __extends = function(child, parent) { for (var key in parent) { if (__hasProp.call(parent, key)) child[key] = parent[key]; } function ctor() { this.constructor = child; } ctor.prototype = parent.prototype; child.prototype = new ctor; child.__super__ = parent.prototype; return child; };
 
-  define(["js/util.js", "lib/EventEmitter.js", "js/ftp.js"], function(Utils, EventEmitter, FTP) {
+  define(["lib/EventEmitter.js", "js/ftp.js"], function(EventEmitter, FTP) {
     var FTPClient;
-    FTPClient = (function() {
+    return FTPClient = (function(_super) {
+
+      __extends(FTPClient, _super);
 
       FTPClient.name = 'FTPClient';
 
@@ -16,7 +20,6 @@
           port: 21
         };
         _.extend(this.options, options);
-        EventEmitter.call(this);
       }
 
       FTPClient.prototype.connect = function(callback) {
@@ -79,9 +82,7 @@
 
       return FTPClient;
 
-    })();
-    Utils.inherits(FTPClient, EventEmitter);
-    return FTPClient;
+    })(EventEmitter);
   });
 
 }).call(this);
